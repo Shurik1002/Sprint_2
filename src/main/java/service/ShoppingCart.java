@@ -17,34 +17,33 @@ public class ShoppingCart {
         return (food.getAmount() * food.getPrice()) / Discount.PERCENT_100 * food.getDiscount();
     }
 
-
     public double getPriceWhithoutDiscount() {
-        for (int i = 0; i < shoppingCart.length; i++) {
-            priceWhithoutDiscount = priceWhithoutDiscount + (shoppingCart[i].getPrice() * shoppingCart[i].getAmount());
+        for (Food food : shoppingCart) {
+            priceWhithoutDiscount = priceWhithoutDiscount + (food.getPrice() * food.getAmount());
         }
         return priceWhithoutDiscount;
     }
 
     public double getPriceWhithDiscount() {
-        for (int i = 0; i < shoppingCart.length; i++) {
-            if (shoppingCart[i].getVegetarian()) {
-                if (shoppingCart[i].getDiscount() > 0) {
-                    priceWhithDiscount = priceWhithDiscount + ((shoppingCart[i].getPrice() * shoppingCart[i].getAmount()) - ShoppingCart.getDiscount(shoppingCart[i]));
+        for (Food food : shoppingCart) {
+            if (food.getVegetarian()) {
+                if (food.getDiscount() > 0) {
+                    priceWhithDiscount = priceWhithDiscount + ((food.getPrice() * food.getAmount()) - ShoppingCart.getDiscount(food));
                 } else {
-                    priceWhithDiscount = priceWhithDiscount + (shoppingCart[i].getPrice() * shoppingCart[i].getAmount());
+                    priceWhithDiscount = priceWhithDiscount + (food.getPrice() * food.getAmount());
                 }
             } else {
-                priceWhithDiscount = priceWhithDiscount + (shoppingCart[i].getPrice() * shoppingCart[i].getAmount());
+                priceWhithDiscount = priceWhithDiscount + (food.getPrice() * food.getAmount());
             }
         }
         return priceWhithDiscount;
     }
 
     public double getPriceWhithoutDiscountForVegetarianFood() {
-        for (int i = 0; i < shoppingCart.length; i++) {
-            if (shoppingCart[i].getVegetarian()) {
-                if (shoppingCart[i].getDiscount() == 0) {
-                    priceWhithoutDiscountForVegetarianFood = priceWhithoutDiscountForVegetarianFood + (shoppingCart[i].getPrice() * shoppingCart[i].getAmount());
+        for (Food food : shoppingCart) {
+            if (food.getVegetarian()) {
+                if (food.getDiscount() == 0) {
+                    priceWhithoutDiscountForVegetarianFood = priceWhithoutDiscountForVegetarianFood + (food.getPrice() * food.getAmount());
                 }
             }
         }

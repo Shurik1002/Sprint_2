@@ -12,9 +12,9 @@ public class Main {
         Food[] shoppingCart = {meat, redApple, greenApple};
         ShoppingCart cart = new ShoppingCart(shoppingCart);
 
-        System.out.println("Общая сумма товаров без скидки: " + cart.getPriceWhithoutDiscount());
-        System.out.println("Общая сумма товоров со скидкой: " + cart.getPriceWhithDiscount());
-        System.out.println("Сумма всех вегетарианских товаров без скидки: " + cart.getPriceWhithoutDiscountForVegetarianFood());
+        System.out.printf("Общая сумма товаров без скидки: %s\n", cart.getPriceWhithoutDiscount());
+        System.out.printf("Общая сумма товоров со скидкой: %s\n", cart.getPriceWhithDiscount());
+        System.out.printf("Сумма всех вегетарианских товаров без скидки: %s\n", cart.getPriceWhithoutDiscountForVegetarianFood());
 
     }
 }
