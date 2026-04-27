@@ -42,9 +42,7 @@ public class ShoppingCart {
     public double getPriceWhithoutDiscountForVegetarianFood() {
         for (Food food : shoppingCart) {
             if (food.getVegetarian()) {
-                if (food.getDiscount() == 0) {
-                    priceWhithoutDiscountForVegetarianFood = priceWhithoutDiscountForVegetarianFood + (food.getPrice() * food.getAmount());
-                }
+                priceWhithoutDiscountForVegetarianFood = priceWhithoutDiscountForVegetarianFood + (food.getPrice() * food.getAmount());
             }
         }
         return priceWhithoutDiscountForVegetarianFood;
