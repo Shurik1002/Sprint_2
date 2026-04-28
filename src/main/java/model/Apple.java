@@ -6,8 +6,7 @@ public class Apple extends Food {
     protected String color;
 
     public Apple(int amount, double price, String color) {
-        super(amount, price);
-        super.isVegetarian = true;
+        super(amount, price, true);
         this.color = color;
     }
 

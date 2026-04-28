@@ -5,8 +5,7 @@ import model.constants.*;
 public class Meat extends Food{
 
     public Meat(int amount, double price) {
-        super(amount, price);
-        super.isVegetarian = false;
+        super(amount, price, false);
     }
 
     @Override
